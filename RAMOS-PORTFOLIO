@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <body>
+ <h1> Jericho Jose B. Ramos</h1>
+<p> Hi I'm jericho jose ramos from bachelor of science in comnputer science, i love playing games and doing outdoor activities.</p>
+
+<h2> About Me:</h2>
+
+hi my name is jericho i lived in Naga Delrosaryo near in Ford and my hobbies is i love to play billiards play online games join 
+ tournaments playing football and i also join a taekwondo dojo.
+ <img src="pic1.jpg" alt="pic1">
+ <h2> Skills section:</h2>
+
+ <ul>
+<li>cook  </li>
+<li>drive  </li>
+<li>gamer  </li>
+ </ul>
+
+ <h2> Work Experience  section:</h2>
+<style>
+ table, th, td {
+    border: 3px solid black;
+ }
+
+ img{
+    width: 20%;
+    height: 20%;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+</style>
+  <table>
+<tr>
+<th> Job title</th>
+<th> Company Name</th>
+<th> Dates Worked</th>
+</tr>
+
+<tr>
+    <th> Sales Boy</th>
+    <th> Gaisano Capital</th>
+    <th> 2022</th>  
+</tr>
+
+<tr>
+    <th> Online Streaming</th>
+    <th> Mobile Legends</th>
+    <th>2019-2024 </th>  
+</tr>
+  </table>
+
+  <h2> Contact Me:</h2>
+  <p>
+    <a href="https://www.facebook.com/wawi.estidi">Facebook</a>
+</p>
+<p>
+    <a href="https://www.instagram.com/jerichojose_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+</p>
+
+<footer>
+    <h1></h1>
+</footer>
+
+My Projects
+
+<a href="calculator.html" target="_blank">Open Calculator</a>
+<a href="index.html" target="_blank">Open To-Do List</a>
+ 
+
+
+<h1>
+    Created by: Jericho Jose Ramos
+   2024 © 
+</h1>
+
+
+
+
+
+
+
+
+
+    </body>
+</html>

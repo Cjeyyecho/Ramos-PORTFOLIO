@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Calculator</title>
+  <style>
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+
+    .calculator {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .calculator .display {
+      grid-column: span 4;
+      background: #222;
+      color: #fff;
+      font-size: 2rem;
+      text-align: right;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .calculator button {
+      padding: 15px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .calculator button:hover {
+      background: #dcdcdc;
+    }
+
+    .calculator button.operator {
+      background: #f9a825;
+      color: #fff;
+    }
+
+    .calculator button.operator:hover {
+      background: #ffca28;
+    }
+
+    .calculator button.equal {
+      background: #43a047;
+      color: #fff;
+      grid-column: span 2;
+    }
+
+    .calculator button.equal:hover {
+      background: #66bb6a;
+    }
+
+    .calculator button.clear {
+      background: #e53935;
+      color: #fff;
+      grid-column: span 2;
+    }
+
+    .calculator button.clear:hover {
+      background: #ef5350;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .calculator {
+        padding: 10px;
+      }
+
+      .calculator .display {
+        font-size: 1.5rem;
+      }
+
+      .calculator button {
+        padding: 10px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <button class="clear" onclick="clearDisplay()">C</button>
+    <button class="operator" onclick="appendOperator('%')">%</button>
+    <button class="operator" onclick="appendOperator('/')">&#247;</button>
+    <button class="operator" onclick="appendOperator('*')">&#215;</button>
+    <button onclick="appendNumber(7)">7</button>
+    <button onclick="appendNumber(😎">8</button>
+    <button onclick="appendNumber(9)">9</button>
+    <button class="operator" onclick="appendOperator('-')">&#8722;</button>
+    <button onclick="appendNumber(4)">4</button>
+    <button onclick="appendNumber(5)">5</button>
+    <button onclick="appendNumber(6)">6</button>
+    <button class="operator" onclick="appendOperator('+')">&#43;</button>
+    <button onclick="appendNumber(1)">1</button>
+    <button onclick="appendNumber(2)">2</button>
+    <button onclick="appendNumber(3)">3</button>
+    <button class="equal" onclick="calculateResult()">=</button>
+    <button onclick="appendNumber(0)" style="grid-column: span 2;">0</button>
+    <button onclick="appendNumber('.')">.</button>
+  </div>
+
+  <script>
+    const display = document.getElementById('display');
+
+    function clearDisplay() {
+      display.textContent = '0';
+    }
+
+    function appendNumber(number) {
+      if (display.textContent === '0') {
+        display.textContent = number;
+      } else {
+        display.textContent += number;
+      }
+    }
+
+    function appendOperator(operator) {
+      const lastChar = display.textContent.slice(-1);
+      if (['+', '-', '*', '/', '%'].includes(lastChar)) {
+        display.textContent = display.textContent.slice(0, -1) + operator;
+      } else {
+        display.textContent += operator;
+      }
+    }
+
+    function calculateResult() {
+      try {
+        display.textContent = eval(display.textContent.replace('%', '/100'));
+      } catch (error) {
+        display.textContent = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
